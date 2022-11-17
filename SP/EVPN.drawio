@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-11-17T04:56:06.312Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="zHTYG0kkRBNy4qo-dbxO" version="20.5.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-17T04:58:14.644Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="GEb6zVjs0WxojkjEg602" version="20.5.3" type="github">
   <diagram id="2Gvp9s0XhHdzNjSNC6kU" name="Страница 1">
     <mxGraphModel dx="1102" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -56,7 +56,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vkuwil8Yssh3UNzR4T3k-2" value="CE-1" style="shape=mxgraph.cisco.routers.router;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="290" y="320" width="50" height="30" as="geometry" />
+          <mxGeometry x="250" y="320" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="vkuwil8Yssh3UNzR4T3k-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.013;entryY=0.475;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=10;endArrow=none;endFill=0;" edge="1" parent="1" source="vkuwil8Yssh3UNzR4T3k-3" target="vkuwil8Yssh3UNzR4T3k-49">
           <mxGeometry relative="1" as="geometry" />
@@ -137,7 +137,7 @@
           <mxGeometry x="1000" y="400" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="vkuwil8Yssh3UNzR4T3k-47" value="vf vlan777&lt;br&gt;192.168.1.1/24" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d79b00;fillColor=#ffe6cc;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="200" y="230" width="90" height="40" as="geometry" />
+          <mxGeometry x="180" y="230" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="vkuwil8Yssh3UNzR4T3k-48" value="vrf vlan555&lt;br&gt;172.16.1.1/24" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="180" y="389" width="80" height="40" as="geometry" />
@@ -153,6 +153,15 @@
         </mxCell>
         <mxCell id="vkuwil8Yssh3UNzR4T3k-33" value="10.0.24.0/31" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="665" y="220" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vkuwil8Yssh3UNzR4T3k-91" value="fa0/0.777&lt;br&gt;fa0/0.555" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="290" y="300" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vkuwil8Yssh3UNzR4T3k-92" value="fa0/0.777&lt;br&gt;fa0/0.555" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="840" y="100" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vkuwil8Yssh3UNzR4T3k-94" value="fa0/0.777&lt;br&gt;fa0/0.555" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="510" width="70" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
