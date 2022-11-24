@@ -1,0 +1,133 @@
+set version 18.1R3.3
+set system host-name MAIN
+set system root-authentication encrypted-password "$6$SabTXeag$1STq5FCMLTcQ6FwuKKJKGRNEUEKVIegj2Qq3OPH1WqaQOyS6907cMVUqhi4crqVJnR7MK20QWIYCmezV8ZSn30"
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system processes dhcp-service traceoptions file dhcp_logfile
+set system processes dhcp-service traceoptions file size 10m
+set system processes dhcp-service traceoptions level all
+set system processes dhcp-service traceoptions flag all
+set logical-systems PE-1 interfaces ge-0/0/1 unit 0 family inet address 10.0.14.0/31
+set logical-systems PE-1 interfaces ge-0/0/1 unit 0 family mpls
+set logical-systems PE-1 interfaces ge-0/0/2 unit 0 family bridge interface-mode trunk
+set logical-systems PE-1 interfaces ge-0/0/2 unit 0 family bridge vlan-id-list 555
+set logical-systems PE-1 interfaces ge-0/0/2 unit 0 family bridge vlan-id-list 777
+set logical-systems PE-1 interfaces lo0 unit 1 family inet address 1.1.1.1/32
+set logical-systems PE-1 protocols mpls interface ge-0/0/1.0
+set logical-systems PE-1 protocols bgp group IBGP type internal
+set logical-systems PE-1 protocols bgp group IBGP local-address 1.1.1.1
+set logical-systems PE-1 protocols bgp group IBGP neighbor 4.4.4.4 family evpn signaling
+set logical-systems PE-1 protocols ospf area 0.0.0.0 interface ge-0/0/1.0 interface-type p2p
+set logical-systems PE-1 protocols ospf area 0.0.0.0 interface lo0.1
+set logical-systems PE-1 protocols ldp interface ge-0/0/1.0
+set logical-systems PE-1 policy-options policy-statement VPN-1-EXPORT term DEFAULT then community add VPN-1
+set logical-systems PE-1 policy-options policy-statement VPN-1-EXPORT term DEFAULT then accept
+set logical-systems PE-1 policy-options policy-statement VPN-1-EXPORT term REJECT then reject
+set logical-systems PE-1 policy-options policy-statement VPN-1-IMPORT term DEFAULT-IMPORT from protocol bgp
+set logical-systems PE-1 policy-options policy-statement VPN-1-IMPORT term DEFAULT-IMPORT from community VPN-1
+set logical-systems PE-1 policy-options policy-statement VPN-1-IMPORT term DEFAULT-IMPORT then accept
+set logical-systems PE-1 policy-options policy-statement VPN-1-IMPORT term REJECT then reject
+set logical-systems PE-1 policy-options community VPN-1 members target:41798:777
+set logical-systems PE-1 routing-instances RZN-VPN-1 instance-type virtual-switch
+set logical-systems PE-1 routing-instances RZN-VPN-1 interface ge-0/0/2.0
+set logical-systems PE-1 routing-instances RZN-VPN-1 route-distinguisher 1.1.1.1:41798
+set logical-systems PE-1 routing-instances RZN-VPN-1 vrf-import VPN-1-IMPORT
+set logical-systems PE-1 routing-instances RZN-VPN-1 vrf-export VPN-1-EXPORT
+set logical-systems PE-1 routing-instances RZN-VPN-1 protocols evpn extended-vlan-list 555
+set logical-systems PE-1 routing-instances RZN-VPN-1 protocols evpn extended-vlan-list 777
+set logical-systems PE-1 routing-instances RZN-VPN-1 bridge-domains vlan-555 vlan-id 555
+set logical-systems PE-1 routing-instances RZN-VPN-1 bridge-domains vlan-777 vlan-id 777
+set logical-systems PE-1 routing-options autonomous-system 41798
+set logical-systems PE-2 interfaces ge-0/0/4 unit 0 family inet address 10.0.24.0/31
+set logical-systems PE-2 interfaces ge-0/0/4 unit 0 family mpls
+set logical-systems PE-2 interfaces ge-0/0/5 unit 0 family bridge interface-mode trunk
+set logical-systems PE-2 interfaces ge-0/0/5 unit 0 family bridge vlan-id-list 555
+set logical-systems PE-2 interfaces ge-0/0/5 unit 0 family bridge vlan-id-list 777
+set logical-systems PE-2 interfaces lo0 unit 2 family inet address 2.2.2.2/32
+set logical-systems PE-2 protocols mpls interface ge-0/0/4.0
+set logical-systems PE-2 protocols bgp group IBGP type internal
+set logical-systems PE-2 protocols bgp group IBGP neighbor 4.4.4.4 local-address 2.2.2.2
+set logical-systems PE-2 protocols bgp group IBGP neighbor 4.4.4.4 family evpn signaling
+set logical-systems PE-2 protocols ospf area 0.0.0.0 interface ge-0/0/4.0 interface-type p2p
+set logical-systems PE-2 protocols ospf area 0.0.0.0 interface lo0.2
+set logical-systems PE-2 protocols ldp interface ge-0/0/4.0
+set logical-systems PE-2 policy-options policy-statement VPN-1-EXPORT term DEFAULT then community add VPN-1
+set logical-systems PE-2 policy-options policy-statement VPN-1-EXPORT term DEFAULT then accept
+set logical-systems PE-2 policy-options policy-statement VPN-1-EXPORT term REJECT then reject
+set logical-systems PE-2 policy-options policy-statement VPN-1-IMPORT term DEFAULT-IMPORT from protocol bgp
+set logical-systems PE-2 policy-options policy-statement VPN-1-IMPORT term DEFAULT-IMPORT from community VPN-1
+set logical-systems PE-2 policy-options policy-statement VPN-1-IMPORT term DEFAULT-IMPORT then accept
+set logical-systems PE-2 policy-options policy-statement VPN-1-IMPORT term REJECT then reject
+set logical-systems PE-2 policy-options community VPN-1 members target:41798:777
+set logical-systems PE-2 routing-instances RZN-VPN-1 instance-type virtual-switch
+set logical-systems PE-2 routing-instances RZN-VPN-1 interface ge-0/0/5.0
+set logical-systems PE-2 routing-instances RZN-VPN-1 route-distinguisher 2.2.2.2:41798
+set logical-systems PE-2 routing-instances RZN-VPN-1 vrf-import VPN-1-IMPORT
+set logical-systems PE-2 routing-instances RZN-VPN-1 vrf-export VPN-1-EXPORT
+set logical-systems PE-2 routing-instances RZN-VPN-1 protocols evpn extended-vlan-list 555
+set logical-systems PE-2 routing-instances RZN-VPN-1 protocols evpn extended-vlan-list 777
+set logical-systems PE-2 routing-instances RZN-VPN-1 bridge-domains vlan-555 vlan-id 555
+set logical-systems PE-2 routing-instances RZN-VPN-1 bridge-domains vlan-777 vlan-id 777
+set logical-systems PE-2 routing-options autonomous-system 41798
+set logical-systems PE-3 interfaces ge-0/0/7 unit 0 family inet address 10.0.34.0/31
+set logical-systems PE-3 interfaces ge-0/0/7 unit 0 family mpls
+set logical-systems PE-3 interfaces ge-0/0/8 unit 777 encapsulation vlan-bridge
+set logical-systems PE-3 interfaces ge-0/0/8 unit 777 vlan-id 777
+set logical-systems PE-3 interfaces ge-0/0/8 unit 777 family bridge
+set logical-systems PE-3 interfaces lo0 unit 3 family inet address 3.3.3.3/32
+set logical-systems PE-3 protocols mpls interface ge-0/0/7.0
+set logical-systems PE-3 protocols bgp group IBGP type internal
+set logical-systems PE-3 protocols bgp group IBGP local-address 3.3.3.3
+set logical-systems PE-3 protocols bgp group IBGP neighbor 4.4.4.4 family evpn signaling
+set logical-systems PE-3 protocols ospf area 0.0.0.0 interface ge-0/0/7.0 interface-type p2p
+set logical-systems PE-3 protocols ospf area 0.0.0.0 interface lo0.3
+set logical-systems PE-3 protocols ldp interface ge-0/0/7.0
+set logical-systems PE-3 policy-options policy-statement VPN-1-EXPORT term DEFAULT then community add VPN-1
+set logical-systems PE-3 policy-options policy-statement VPN-1-EXPORT term DEFAULT then accept
+set logical-systems PE-3 policy-options policy-statement VPN-1-EXPORT term REJECT then reject
+set logical-systems PE-3 policy-options policy-statement VPN-1-IMPORT term DEFAULT-IMPORT from protocol bgp
+set logical-systems PE-3 policy-options policy-statement VPN-1-IMPORT term DEFAULT-IMPORT from community VPN-1
+set logical-systems PE-3 policy-options policy-statement VPN-1-IMPORT term DEFAULT-IMPORT then accept
+set logical-systems PE-3 policy-options policy-statement VPN-1-IMPORT term REJECT then reject
+set logical-systems PE-3 policy-options community VPN-1 members target:41798:777
+set logical-systems PE-3 routing-instances RZN-VPN-1 instance-type evpn
+set logical-systems PE-3 routing-instances RZN-VPN-1 vlan-id 777
+set logical-systems PE-3 routing-instances RZN-VPN-1 interface ge-0/0/8.777
+set logical-systems PE-3 routing-instances RZN-VPN-1 route-distinguisher 3.3.3.3:777
+set logical-systems PE-3 routing-instances RZN-VPN-1 vrf-import VPN-1-IMPORT
+set logical-systems PE-3 routing-instances RZN-VPN-1 vrf-export VPN-1-EXPORT
+set logical-systems PE-3 routing-instances RZN-VPN-1 protocols evpn interface ge-0/0/8.777
+set logical-systems PE-3 routing-options autonomous-system 41798
+set logical-systems RR-P1 interfaces ge-0/0/0 unit 0 family inet address 10.0.14.1/31
+set logical-systems RR-P1 interfaces ge-0/0/0 unit 0 family mpls
+set logical-systems RR-P1 interfaces ge-0/0/3 unit 0 family inet address 10.0.24.1/31
+set logical-systems RR-P1 interfaces ge-0/0/3 unit 0 family mpls
+set logical-systems RR-P1 interfaces ge-0/0/6 unit 0 family inet address 10.0.34.1/31
+set logical-systems RR-P1 interfaces ge-0/0/6 unit 0 family mpls
+set logical-systems RR-P1 interfaces lo0 unit 4 family inet address 4.4.4.4/32
+set logical-systems RR-P1 protocols mpls interface ge-0/0/0.0
+set logical-systems RR-P1 protocols mpls interface ge-0/0/6.0
+set logical-systems RR-P1 protocols mpls interface ge-0/0/3.0
+set logical-systems RR-P1 protocols bgp group IBGP type internal
+set logical-systems RR-P1 protocols bgp group IBGP local-address 4.4.4.4
+set logical-systems RR-P1 protocols bgp group IBGP cluster 4.4.4.4
+set logical-systems RR-P1 protocols bgp group IBGP neighbor 1.1.1.1 family evpn signaling
+set logical-systems RR-P1 protocols bgp group IBGP neighbor 2.2.2.2 family evpn signaling
+set logical-systems RR-P1 protocols bgp group IBGP neighbor 3.3.3.3 family evpn signaling
+set logical-systems RR-P1 protocols ospf area 0.0.0.0 interface ge-0/0/0.0 interface-type p2p
+set logical-systems RR-P1 protocols ospf area 0.0.0.0 interface ge-0/0/3.0 interface-type p2p
+set logical-systems RR-P1 protocols ospf area 0.0.0.0 interface ge-0/0/6.0 interface-type p2p
+set logical-systems RR-P1 protocols ospf area 0.0.0.0 interface lo0.4
+set logical-systems RR-P1 protocols ldp interface ge-0/0/0.0
+set logical-systems RR-P1 protocols ldp interface ge-0/0/3.0
+set logical-systems RR-P1 protocols ldp interface ge-0/0/6.0
+set logical-systems RR-P1 routing-options autonomous-system 41798
+set interfaces ge-0/0/2 flexible-vlan-tagging
+set interfaces ge-0/0/2 encapsulation flexible-ethernet-services
+set interfaces ge-0/0/5 flexible-vlan-tagging
+set interfaces ge-0/0/5 encapsulation flexible-ethernet-services
+set interfaces ge-0/0/8 flexible-vlan-tagging
+set interfaces ge-0/0/8 encapsulation flexible-ethernet-services
+set interfaces fxp0 unit 0 family inet dhcp vendor-id Juniper-vmx-VM63735F3CF0
