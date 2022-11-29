@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-11-24T05:44:43.460Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="WTIj7nDwfgoDvkr5KT0m" version="20.6.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-29T04:10:14.024Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="Xf6Zi357AQmm5lpwtcTQ" version="20.6.0" type="github">
   <diagram id="2Gvp9s0XhHdzNjSNC6kU" name="Страница 1">
-    <mxGraphModel dx="1886" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="3055" dy="1677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -163,17 +163,26 @@
         <mxCell id="vkuwil8Yssh3UNzR4T3k-94" value="fa0/0.777&lt;br&gt;fa0/0.555" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="850" y="510" width="70" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="11JHvp6KOyxzQsDeVjWv-1" value="as41798" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;fillStyle=auto;shadow=1;glass=0;sketch=0;" vertex="1" parent="1">
+        <mxCell id="11JHvp6KOyxzQsDeVjWv-1" value="as41798" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;fillStyle=auto;shadow=1;glass=0;sketch=0;" parent="1" vertex="1">
           <mxGeometry x="440" y="55" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="11JHvp6KOyxzQsDeVjWv-2" value="instance type Virtual router" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;shadow=1;glass=0;sketch=0;fillStyle=auto;" vertex="1" parent="1">
+        <mxCell id="11JHvp6KOyxzQsDeVjWv-2" value="instance type Virtual router" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;shadow=1;glass=0;sketch=0;fillStyle=auto;" parent="1" vertex="1">
           <mxGeometry x="380" y="270" width="170" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="11JHvp6KOyxzQsDeVjWv-4" value="instance-type evpn" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;shadow=1;glass=0;sketch=0;fillStyle=auto;" vertex="1" parent="1">
+        <mxCell id="11JHvp6KOyxzQsDeVjWv-4" value="instance-type evpn" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;shadow=1;glass=0;sketch=0;fillStyle=auto;" parent="1" vertex="1">
           <mxGeometry x="640" y="586" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="11JHvp6KOyxzQsDeVjWv-5" value="instance type Virtual router" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;shadow=1;glass=0;sketch=0;fillStyle=auto;" vertex="1" parent="1">
+        <mxCell id="11JHvp6KOyxzQsDeVjWv-5" value="instance type Virtual router" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;shadow=1;glass=0;sketch=0;fillStyle=auto;" parent="1" vertex="1">
           <mxGeometry x="610" y="70" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="piN8BN1qK6OxTJCW0ysz-1" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;irb.777&lt;br&gt;192.168.1.254/24&lt;/font&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="410" y="375" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="piN8BN1qK6OxTJCW0ysz-3" value="show route table RZN-VPN-1.evpn.0 match-prefix&amp;nbsp;*ca:08:19:3b:00:00*&amp;nbsp;&lt;br&gt;sh bridge mac-table" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="-145" y="-50" width="340" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="piN8BN1qK6OxTJCW0ysz-4" value="sh evpn mac-table" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="870" y="610" width="110" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
